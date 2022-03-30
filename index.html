@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <title>Weather Teller</title>
+</head>
+
+<body class="flex-column min-100-vh">
+  <header class="hero">
+    <h1 class="app-title"> Weather Teller</h1>
+  </header>
+  
+  <main class="flex-row justify-space-between">
+      
+    <div class="col-12 col-md-4">
+      <div class="card">
+        <h3 class="card-header text-uppercase">Search By Area</h3>
+        <form id="user-form" class="card-body">
+          <label class="form-label" for="username">Area</label>
+          <input name="username" id="username" type="text" autofocus="true" class="form-input" />
+          <button type="submit" class="btn">Get Weather</button>
+        </form>
+      </div>
+    </div>
+    
+
+    <div class="col-12 col-md-8">
+      <h2 class="subtitle">Place: <span id="repo-search-term"></span></h2>
+            <div class="initial-text">Temp:</div>
+            <div class="initial-text">Wind:</div>
+            <div class="initial-text">Humidity:</div>
+            <div class="initial-text">UV index:</div>
+
+      <div><h3>5-Day Forcast:</h3></div>
+
+      <div class="row days">
+        <div class="card" style="width: 12rem; height: 12rem; margin: 10px">
+            <div class="card-body">
+              <h5 class="card-title">Day 1:</h5>
+              <div class="card-text">
+                <div class="card-icon">Icon:</div>
+                  <div class="card-temp">Temp:</div>
+                  <div class="card-wind">Wind:</div>
+                  <div class="card-hum">Humidity:</div>
+              </div>
+            </div>
+        </div>
+        <div class="card" style="width: 12rem; height: 12rem; margin: 10px">
+            <div class="card-body">
+              <h5 class="card-title">Day 2:</h5>
+              <div class="card-text">
+                <div class="card-icon">Icon:</div>
+                  <div class="card-temp">Temp:</div>
+                  <div class="card-wind">Wind:</div>
+                  <div class="card-hum">Humidity:</div>
+              </div>
+            </div>
+        </div>
+        <div class="card" style="width: 12rem; height: 12rem; margin: 10px">
+            <div class="card-body">
+              <h5 class="card-title">Day 3:</h5>
+              <div class="card-text">
+                <div class="card-icon">Icon:</div>
+                  <div class="card-temp">Temp:</div>
+                  <div class="card-wind">Wind:</div>
+                  <div class="card-hum">Humidity:</div>
+              </div>
+            </div>
+        </div>
+        <div class="card" style="width: 12rem; height: 12rem; margin: 10px">
+            <div class="card-body">
+              <h5 class="card-title">Day 4:</h5>
+              <div class="card-text">
+                <div class="card-icon">Icon:</div>
+                  <div class="card-temp">Temp:</div>
+                  <div class="card-wind">Wind:</div>
+                  <div class="card-hum">Humidity:</div>
+              </div>
+            </div>
+        </div>
+        <div class="card" style="width: 12rem; height: 12rem; margin: 10px">
+            <div class="card-body">
+              <h5 class="card-title">Day 5:</h5>
+              <div class="card-text">
+                <div class="card-icon">Icon:</div>
+                <div class="card-temp">Temp:</div>
+                <div class="card-wind">Wind:</div>
+                <div class="card-hum">Humidity:</div>
+              </div>
+            </div>
+        </div>
+        
+      </div>
+      
+
+    </div>
+    <div class="col-12 col-md-1">
+        <h2 class="subtitle">History: <span id="repo-search-term"></span></h2>
+        <div id="repos-container" class="list-group">
+  
+        </div>
+      </div>
+    
+    
+  </main>
+
+  <script src="./assets/js/homepage.js"></script>
+</body>
+
+</html>

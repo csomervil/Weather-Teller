@@ -24,8 +24,8 @@
         <h3 class="card-header text-uppercase">Search By Area</h3>
         <form id="user-form" class="card-body">
           <label class="form-label" for="username">Area</label>
-          <input name="username" id="username" type="text" autofocus="true" class="form-input" />
-          <button type="submit" class="btn">Get Weather</button>
+          <input name="area" id="area" type="text" autofocus="true" class="form-input" />
+          <button class="btn" type="button" id="fetch-button">Get Weather</button>
         </form>
       </div>
     </div>
@@ -33,10 +33,10 @@
 
     <div class="col-12 col-md-8">
       <h2 class="subtitle">Place: <span id="repo-search-term"></span></h2>
-            <div class="initial-text">Temp:</div>
-            <div class="initial-text">Wind:</div>
-            <div class="initial-text">Humidity:</div>
-            <div class="initial-text">UV index:</div>
+            <div class="initial-text" id="i-temp1">Temp:</div>
+            <div class="initial-text" id="i-wind1">Wind:</div>
+            <div class="initial-text" id="i-humidity1">Humidity:</div>
+            <div class="initial-text" id="i-feel1">Feels Like:</div>
 
       <div><h3>5-Day Forcast:</h3></div>
 
@@ -46,9 +46,9 @@
               <h5 class="card-title">Day 1:</h5>
               <div class="card-text">
                 <div class="card-icon">Icon:</div>
-                  <div class="card-temp">Temp:</div>
-                  <div class="card-wind">Wind:</div>
-                  <div class="card-hum">Humidity:</div>
+                  <div class="card-temp" id="i-temp2">Temp:</div>
+                  <div class="card-wind" id="i-wind2">Wind:</div>
+                  <div class="card-hum" id="i-humidity2">Humidity:</div>
               </div>
             </div>
         </div>
@@ -57,9 +57,9 @@
               <h5 class="card-title">Day 2:</h5>
               <div class="card-text">
                 <div class="card-icon">Icon:</div>
-                  <div class="card-temp">Temp:</div>
-                  <div class="card-wind">Wind:</div>
-                  <div class="card-hum">Humidity:</div>
+                  <div class="card-temp" id="i-temp3">Temp:</div>
+                  <div class="card-wind" id="i-wind3">Wind:</div>
+                  <div class="card-hum" id="i-humidity3">Humidity:</div>
               </div>
             </div>
         </div>
@@ -68,9 +68,9 @@
               <h5 class="card-title">Day 3:</h5>
               <div class="card-text">
                 <div class="card-icon">Icon:</div>
-                  <div class="card-temp">Temp:</div>
-                  <div class="card-wind">Wind:</div>
-                  <div class="card-hum">Humidity:</div>
+                  <div class="card-temp" id="i-temp4">Temp:</div>
+                  <div class="card-wind" id="i-wind4">Wind:</div>
+                  <div class="card-hum" id="i-humidity4">Humidity:</div>
               </div>
             </div>
         </div>
@@ -79,9 +79,9 @@
               <h5 class="card-title">Day 4:</h5>
               <div class="card-text">
                 <div class="card-icon">Icon:</div>
-                  <div class="card-temp">Temp:</div>
-                  <div class="card-wind">Wind:</div>
-                  <div class="card-hum">Humidity:</div>
+                <div class="card-temp" id="i-temp5">Temp:</div>
+                <div class="card-wind" id="i-wind5">Wind:</div>
+                <div class="card-hum" id="i-humidity5">Humidity:</div>
               </div>
             </div>
         </div>
@@ -90,9 +90,9 @@
               <h5 class="card-title">Day 5:</h5>
               <div class="card-text">
                 <div class="card-icon">Icon:</div>
-                <div class="card-temp">Temp:</div>
-                <div class="card-wind">Wind:</div>
-                <div class="card-hum">Humidity:</div>
+                <div class="card-temp" id="i-temp6">Temp:</div>
+                  <div class="card-wind" id="i-wind6">Wind:</div>
+                  <div class="card-hum" id="i-humidity6">Humidity:</div>
               </div>
             </div>
         </div>
@@ -111,7 +111,7 @@
     
   </main>
 
-  <script src="./assets/js/homepage.js"></script>
+  <script src="./assets/js/script.js"></script>
 </body>
 
 </html>

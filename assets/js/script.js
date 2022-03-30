@@ -1,5 +1,6 @@
 var weatherContainer = document.getElementById('weathercont');
 var fetchButton = document.getElementById('fetch-button');
+var locationEl = document.getElementById('location');
 
 var initialTempEl1 = document.getElementById('i-temp1')
 var initialWindEl1 = document.getElementById('i-wind1')
@@ -33,22 +34,33 @@ var initialFeelEl6 = document.getElementById('i-feel6')
 
 
 function getApi() {
+    if (document.getElementById("area").value == "") {
+        alert("Enter a Location")
+        return false;
+    }
     var place = document.getElementById("area").value
-    var requestUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=Toronto&appid=d33da539eba3b32d848bf55aa2815d00';
-    var requestUrl1= 'https://api.openweathermap.org/data/2.5/weather?q=toronto&appid=d33da539eba3b32d848bf55aa2815d00';
+    var requestUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + place + '&appid=d33da539eba3b32d848bf55aa2815d00';
+    var requestUrl1= 'https://api.openweathermap.org/data/2.5/weather?q=' + place + '&appid=d33da539eba3b32d848bf55aa2815d00';
 
   fetch(requestUrl1)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
+    if (data.cod == '404') {
+        alert("Location Does Not Exist")
+        return false;
+    }
 
       console.log(data);
 
-    initialTempEl1.innerHTML = "Temp: " + data.main.temp;
-    initialWindEl1.innerHTML = "Wind: " + data.wind.speed;
-    initialHumEl1.innerHTML = "Humidity: " + data.main.humidity;
-    initialFeelEl1.innerHTML = "Feels Like: " + data.main.feels_like;
+    var currentDate = moment().format('L');;
+    locationEl.innerHTML = place + ": " + currentDate;
+
+    initialTempEl1.innerHTML = "Temp: " + data.main.temp + " K";
+    initialWindEl1.innerHTML = "Wind: " + data.wind.speed + " mph";
+    initialHumEl1.innerHTML = "Humidity: " + data.main.humidity  + " %";
+    initialFeelEl1.innerHTML = "Feels Like: " + data.main.feels_like + " K";
 
 
     });
@@ -61,25 +73,25 @@ function getApi() {
 
       console.log(data.list);
         for(var i=0; i < data.list.length; i++){
-                initialTempEl2.innerHTML = "Temp: " + data.list[0].main.temp;
-                initialWindEl2.innerHTML = "Wind: " + data.list[0].wind.speed;
-                initialHumEl2.innerHTML = "Humidity: " + data.list[0].main.humidity;
+                initialTempEl2.innerHTML = "Temp: " + data.list[0].main.temp + " K";
+                initialWindEl2.innerHTML = "Wind: " + data.list[0].wind.speed + " mph";
+                initialHumEl2.innerHTML = "Humidity: " + data.list[0].main.humidity + " %";
 
-                initialTempEl3.innerHTML = "Temp: " + data.list[7].main.temp;
-                initialWindEl3.innerHTML = "Wind: " + data.list[7].wind.speed;
-                initialHumEl3.innerHTML = "Humidity: " + data.list[7].main.humidity;
+                initialTempEl3.innerHTML = "Temp: " + data.list[7].main.temp + " K";
+                initialWindEl3.innerHTML = "Wind: " + data.list[7].wind.speed + " mph";
+                initialHumEl3.innerHTML = "Humidity: " + data.list[7].main.humidity + " %";
 
-                initialTempEl4.innerHTML = "Temp: " + data.list[15].main.temp;
-                initialWindEl4.innerHTML = "Wind: " + data.list[15].wind.speed;
-                initialHumEl4.innerHTML = "Humidity: " + data.list[15].main.humidity;
+                initialTempEl4.innerHTML = "Temp: " + data.list[15].main.temp + " K";
+                initialWindEl4.innerHTML = "Wind: " + data.list[15].wind.speed + " mph";
+                initialHumEl4.innerHTML = "Humidity: " + data.list[15].main.humidity + " %";
 
-                initialTempEl5.innerHTML = "Temp: " + data.list[23].main.temp;
-                initialWindEl5.innerHTML = "Wind: " + data.list[23].wind.speed;
+                initialTempEl5.innerHTML = "Temp: " + data.list[23].main.temp + " K";
+                initialWindEl5.innerHTML = "Wind: " + data.list[23].wind.speed + " mph";
                 initialHumEl5.innerHTML = "Humidity: " + data.list[23].main.humidity;
 
-                initialTempEl6.innerHTML = "Temp: " + data.list[31].main.temp;
-                initialWindEl6.innerHTML = "Wind: " + data.list[31].wind.speed;
-                initialHumEl6.innerHTML = "Humidity: " + data.list[31].main.humidity;
+                initialTempEl6.innerHTML = "Temp: " + data.list[31].main.temp + " K";
+                initialWindEl6.innerHTML = "Wind: " + data.list[31].wind.speed + " mph";
+                initialHumEl6.innerHTML = "Humidity: " + data.list[31].main.humidity + " %";
             
         }
     });

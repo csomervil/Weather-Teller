@@ -170,6 +170,33 @@
     padding: 2.5%;
   }
   
+  /* UVI COLOURS */
+  #i-index1 {
+    width: 35px;
+
+  }
+
+  .low {
+    background-color: greenyellow;
+  }
+
+  .moderate {
+    background-color: rgb(40, 153, 40);
+  }
+
+  .high {
+    background-color: orange;
+  }
+
+  .veryhigh {
+    background-color: orangered;
+  }
+
+  .extreme {
+    background-color: darkblue;
+  }
+
+
   /* FORM */
   .form-label,
   .form-input,

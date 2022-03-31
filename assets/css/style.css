@@ -170,9 +170,13 @@
     padding: 2.5%;
   }
   
+  .card-feel {
+    font-size: small;
+  }
+  
   /* UVI COLOURS */
   #i-index1 {
-    width: 35px;
+    width: 34px;
 
   }
 
@@ -181,7 +185,7 @@
   }
 
   .moderate {
-    background-color: rgb(40, 153, 40);
+    background-color: yellow;
   }
 
   .high {
@@ -190,10 +194,12 @@
 
   .veryhigh {
     background-color: orangered;
+    color:white
   }
 
   .extreme {
-    background-color: darkblue;
+    background-color: rgb(194, 60, 105);
+    color:darkblue
   }
 
 

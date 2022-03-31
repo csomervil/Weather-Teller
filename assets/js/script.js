@@ -33,6 +33,12 @@ var initialHumEl6 = document.getElementById('i-humidity6')
 var initialFeelEl6 = document.getElementById('i-feel6')
 
 
+buttons = document.getElementsByClassName("saveBtn");
+    for (var i = 0; i < buttons.length; i++) {
+        btns[i].addEventListener("click", getApi())
+
+    }
+
 function getApi() {
     if (document.getElementById("area").value == "") {
         alert("Enter a Location")
@@ -54,13 +60,15 @@ function getApi() {
 
       console.log(data);
 
-    var currentDate = moment().format('L');;
+    var currentDate = moment().format('L');
     locationEl.innerHTML = place + ": " + currentDate;
 
     initialTempEl1.innerHTML = "Temp: " + data.main.temp + " K";
     initialWindEl1.innerHTML = "Wind: " + data.wind.speed + " mph";
     initialHumEl1.innerHTML = "Humidity: " + data.main.humidity  + " %";
     initialFeelEl1.innerHTML = "Feels Like: " + data.main.feels_like + " K";
+
+    addBtn();
 
 
     });
@@ -96,4 +104,64 @@ function getApi() {
         }
     });
 }
+
+function addBtn () {
+    var 
+        txtVal = "lol",
+        buttonNode = document.getElementById('button');
+        btnNode = document.createElement("button");
+        txtNode = document.createTextNode(txtVal);
+    if (txtVal === "") {
+        alert("Username Required")
+        return false;
+    }
+    
+    btnNode.appendChild(txtNode);
+    buttonNode.appendChild(btnNode);
+    saveAll()
+
+}
+
+function saveAll() {
+    var oldStorage = [];
+
+    var values = document.querySelectorAll('button');
+    for (var i = 0; i < values.length; i++) {
+      oldStorage.push(values[i].innerHTML);
+    }
+    var newStorage = oldStorage
+    localStorage.setItem('items', JSON.stringify(newStorage));
+}
+
+function loadAll() {
+
+    var storedvalue = localStorage.getItem('items');
+    console.log(storedvalue);
+
+    if (!storedvalue) {
+        return false;
+    }
+
+    storedvalue = JSON.parse(storedvalue);
+    console.log(storedvalue);
+
+    for (var i = 0; i < storedvalue.length; i++) {
+        if (storedvalue[i] != "Get Weather"){
+        newword = storedvalue[i]
+        var
+            buttonNode = document.getElementById('button');
+            btnNode = document.createElement("button");
+            txtNode = document.createTextNode(newword);
+            
+        btnNode.appendChild(txtNode);
+        buttonNode.appendChild(btnNode);
+        }
+    }
+
+}
+
+loadAll();
+
+
 fetchButton.addEventListener('click', getApi);
+

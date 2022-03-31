@@ -6,6 +6,7 @@ var initialTempEl1 = document.getElementById('i-temp1')
 var initialWindEl1 = document.getElementById('i-wind1')
 var initialHumEl1 = document.getElementById('i-humidity1')
 var initialIndexEl1 = document.getElementById('i-index1')
+var initialIconEl1 = document.getElementById('i-icon1')
 
 var initialTempEl2 = document.getElementById('i-temp2')
 var initialWindEl2 = document.getElementById('i-wind2')
@@ -21,16 +22,19 @@ var initialTempEl4 = document.getElementById('i-temp4')
 var initialWindEl4 = document.getElementById('i-wind4')
 var initialHumEl4 = document.getElementById('i-humidity4')
 var initialFeelEl4 = document.getElementById('i-feel4')
+var initialIconEl4 = document.getElementById('i-icon4')
 
 var initialTempEl5 = document.getElementById('i-temp5')
 var initialWindEl5 = document.getElementById('i-wind5')
 var initialHumEl5 = document.getElementById('i-humidity5')
 var initialFeelEl5 = document.getElementById('i-feel5')
+var initialIconEl5 = document.getElementById('i-icon5')
 
 var initialTempEl6 = document.getElementById('i-temp6')
 var initialWindEl6 = document.getElementById('i-wind6')
 var initialHumEl6 = document.getElementById('i-humidity6')
 var initialFeelEl6 = document.getElementById('i-feel6')
+var initialIconEl6 = document.getElementById('i-icon6')
 
 
 function getApi() {
@@ -55,10 +59,14 @@ function getApi() {
     }
 
     console.log(data);
+    var placeIcon = data.weather[0].icon;
+    console.log(data.weather[0].icon);
     var placeName = data.name;
     var latitude = data.coord.lat;
     var longitude = data.coord.lon;
     var requestUrl2= 'https://api.openweathermap.org/data/2.5/onecall?lat=' + latitude + '&lon=' + longitude + '&exclude={part}&appid=d33da539eba3b32d848bf55aa2815d00';
+
+    
 
     fetch(requestUrl2)
     .then(function (response) {
@@ -112,25 +120,32 @@ function getApi() {
 
       console.log(data.list);
         for(var i=0; i < data.list.length; i++){
+    
                 initialTempEl2.innerHTML = "Temp: " + data.list[0].main.temp + " K";
                 initialWindEl2.innerHTML = "Wind: " + data.list[0].wind.speed + " mph";
                 initialHumEl2.innerHTML = "Humidity: " + data.list[0].main.humidity + " %";
+                document.getElementById('i-icon2').src = 'http://openweathermap.org/img/w/' + data.list[0].weather[0].icon + '.png';
+    
 
                 initialTempEl3.innerHTML = "Temp: " + data.list[7].main.temp + " K";
                 initialWindEl3.innerHTML = "Wind: " + data.list[7].wind.speed + " mph";
                 initialHumEl3.innerHTML = "Humidity: " + data.list[7].main.humidity + " %";
+                document.getElementById('i-icon3').src = 'http://openweathermap.org/img/w/' + data.list[7].weather[0].icon + '.png';
 
                 initialTempEl4.innerHTML = "Temp: " + data.list[15].main.temp + " K";
                 initialWindEl4.innerHTML = "Wind: " + data.list[15].wind.speed + " mph";
                 initialHumEl4.innerHTML = "Humidity: " + data.list[15].main.humidity + " %";
+                document.getElementById('i-icon4').src = 'http://openweathermap.org/img/w/' + data.list[15].weather[0].icon + '.png';
 
                 initialTempEl5.innerHTML = "Temp: " + data.list[23].main.temp + " K";
                 initialWindEl5.innerHTML = "Wind: " + data.list[23].wind.speed + " mph";
                 initialHumEl5.innerHTML = "Humidity: " + data.list[23].main.humidity;
+                document.getElementById('i-icon5').src = 'http://openweathermap.org/img/w/' + data.list[23].weather[0].icon + '.png';
 
                 initialTempEl6.innerHTML = "Temp: " + data.list[31].main.temp + " K";
                 initialWindEl6.innerHTML = "Wind: " + data.list[31].wind.speed + " mph";
                 initialHumEl6.innerHTML = "Humidity: " + data.list[31].main.humidity + " %";
+                document.getElementById('i-icon6').src = 'http://openweathermap.org/img/w/' + data.list[31].weather[0].icon + '.png';
             
         }
     });

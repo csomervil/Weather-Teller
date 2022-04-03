@@ -16,9 +16,9 @@
   <header class="hero">
     <h1 class="app-title"> Weather Teller</h1>
   </header>
-  
+  <!-- Input Section -->
   <main class="flex-row justify-space-between">
-      
+    
     <div class="col-12 col-md-4">
       <div class="card">
         <h3 class="card-header text-uppercase">Search By Area</h3>
@@ -30,7 +30,7 @@
       </div>
     </div>
     
-
+    <!-- Main Section -->
     <div class="col-12 col-md-8">
       <div class="row"><h2 class="subtitle" id="location">Place: </h2> <img id="i-icon1" src=""></div>
             <div class="initial-text" id="i-temp1">Temp:</div>
@@ -38,7 +38,9 @@
             <div class="initial-text" id="i-humidity1">Humidity:</div>
             <div class="row pl-3">UV Index:<div class="initial-text uvibox" id="i-index1"></div></div>
 
-      <div><h3>5-Day Forcast:</h3></div>
+
+      <!-- Structure For Each Card in the Five Day Forecast -->
+      <div><h3>5-Day Forecast:</h3></div>
 
       <div class="row days">
         <div class="card" style="width: 12rem; height: 12rem; margin: 10px">
@@ -109,10 +111,11 @@
       
 
     </div>
+    <!-- History Section -->
     <div class="col-12 col-md-1">
         <h2 class="subtitle">History: <span id="repo-search-term"></span></h2>
         <div id="repos-container" class="list-group">
-                    
+
           <ul id="button">
                         
           </ul>
